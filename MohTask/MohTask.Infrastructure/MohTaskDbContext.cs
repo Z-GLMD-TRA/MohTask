@@ -28,7 +28,7 @@ namespace MohTask.Infrastructure
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Data Source=.;Initial Catalog=MohTastDB;TrustServerCertificate=True;Integrated Security=SSPI");
+                optionsBuilder.UseSqlServer("Data Source=.;Initial Catalog=MohTaskDB;TrustServerCertificate=True;Integrated Security=SSPI");
             }
 
         }
