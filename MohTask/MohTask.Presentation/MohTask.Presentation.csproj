@@ -14,4 +14,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MohTask.Infrastructure\MohTask.Infrastructure.csproj" />
+    <ProjectReference Include="..\MohTask.Service\MohTask.Service.csproj" />
+  </ItemGroup>
+
 </Project>

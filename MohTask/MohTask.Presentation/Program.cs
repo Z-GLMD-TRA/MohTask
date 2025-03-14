@@ -1,10 +1,32 @@
-﻿namespace MohTask.Presentation
+﻿using Microsoft.Extensions.DependencyInjection;
+
+namespace MohTask.Presentation
 {
-    internal class Program
+    class Program
     {
-        static void Main(string[] args)
+        static async Task Main()
         {
-            Console.WriteLine("Hello, World!");
+            //add configurations
+            var serviceProvider = ServiceConfiguration.ConfigureServices();
+
+            // Resolve dependencies
+            var accountManager = serviceProvider.GetRequiredService<AccountManagement>();
+            var inputOutputOperations = serviceProvider.GetRequiredService<InputAndOutputOperations>();
+            var commandHandler = new CommandHandler(accountManager, inputOutputOperations);
+
+            inputOutputOperations.PrintMessage("Welcome to Mohaymen Task Console App!", ConsoleColor.Cyan);
+
+            while (true)
+            {
+                Console.Write("\nEnter Command: ");
+                var input = Console.ReadLine()?.Trim();
+
+                if (string.IsNullOrEmpty(input))
+                    continue;
+
+                await commandHandler.HandleCommand(input);
+            }
         }
     }
 }
+
