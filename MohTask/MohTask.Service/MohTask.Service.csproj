@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MohTask.DataTransferObject\MohTask.DataTransferObject.csproj" />
+    <ProjectReference Include="..\MohTask.Infrastructure\MohTask.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>
