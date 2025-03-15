@@ -92,6 +92,11 @@ namespace MohTask.Presentation
 
         public async Task SearchUsers(Dictionary<string, string> parameters)
         {
+            if (!_isLoggedIn)
+            {
+                inputOutputOperation.PrintMessage("Error! You must log in first.", ConsoleColor.Yellow);
+                return;
+            }
             if (!parameters.ContainsKey("username"))
             {
                 inputOutputOperation.PrintMessage("Search failed! Missing parameters.", ConsoleColor.Yellow);
