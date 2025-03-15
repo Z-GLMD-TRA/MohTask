@@ -40,6 +40,13 @@ namespace MohTask.Presentation
                     break;
                 default:
                     _inputOutputOperations.PrintMessage("Invalid command. Try again.", ConsoleColor.Red);
+                    _inputOutputOperations.PrintMessage("\nAvailable Commands:\n", ConsoleColor.DarkMagenta);
+                    Console.WriteLine("register --username [name] --password [pass]");
+                    Console.WriteLine("login --username [name] --password [pass]");
+                    Console.WriteLine("change --status [available/not available]");
+                    Console.WriteLine("search --username [prefix]");
+                    Console.WriteLine("changepassword --old [oldpass] --new [newpass]");
+                    Console.WriteLine("logout");
                     break;
             }
         }
